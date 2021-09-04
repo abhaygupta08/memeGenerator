@@ -28,9 +28,9 @@ const MemePage = ({ meme, SetMeme}) => {
                 if(!passs) return;
                 let url = `https://api.imgflip.com/caption_image?template_id=${memePost.template_id}&username=${memePost.username}&password=${memePost.password}`;
                 // console.log(url)
-                memePost.boxes.map( (box,i) => {
+                memePost.boxes.map( (box,i) => (
                     url += (`&boxes[${i}][text]=${box.text}`);
-                })
+                ))
                 // console.log(url)
 
             fetch(url)
